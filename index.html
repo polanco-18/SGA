@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comdata</title>
+  <link rel="shortcut icon" href="img/ico.ico" type="image/vnd.microsoft.icon">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<style>
+
+body {
+ background-image: url("img/fondo.jpg");
+ background-color: #cccccc;
+ background-size: cover;
+}
+</style>
+<body class="hold-transition login-page" >
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <img src="img/Icono.png" alt="Girl in a jacket" width="80%" height="80">
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Ingrese credenciales</p>
+
+      <form action="./../index3.html" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="Usuario" id="Usuario" placeholder="Usuario">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Contraseña">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Recordar me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <a  onclick="Ingresar()" class="btn btn-primary btn-block">Ingresar</a>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>  
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+<script>
+function Ingresar(){
+  var usu=$('#Usuario').val();
+  if(usu=="Admin" || usu=="admin"){
+    location.href ="Admin.html";
+  }
+  else if(usu=="User" || usu=="user"){
+    location.href ="User.html";
+  }
+  else{
+    Swal.fire({
+    icon: 'error',
+    title: 'Error!!!',
+    text: 'Contraseña o usuario equivocado'
+  });
+  }
+  
+
+  
+}
+</script>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+</body>
+</html>
